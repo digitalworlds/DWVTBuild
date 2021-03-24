@@ -37,7 +37,7 @@
           },
           onProgress: unityProgress
         });
-unityInstance = window.gameInstance;
+ var unityInstance = window.gameInstance;
         function unityProgress (gameInstance, progress) {
           if (!gameInstance.progress) {
             gameInstance.loader = document.getElementById('loader');
