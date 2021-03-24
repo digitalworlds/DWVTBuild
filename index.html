@@ -37,9 +37,7 @@
           },
           onProgress: unityProgress
         });
-
-
-var unityInstance = gameInstance;
+var window.unityInstance = window.gameInstance;
 
         function unityProgress (gameInstance, progress) {
           if (!gameInstance.progress) {
@@ -92,6 +90,7 @@ var unityInstance = gameInstance;
 
     <script src="vendor/gl-matrix-min.js"></script>
     <script src="webxr.js"></script>
+
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
