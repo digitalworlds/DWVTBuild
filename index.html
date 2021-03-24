@@ -38,16 +38,8 @@
           onProgress: unityProgress
         });
 
-   window.unityInstance = UnityLoader.instantiate('gameContainer', 'Build/DWVTBuild.json', {
-          Module: {
-            // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
-            webglContextAttributes: {
-              preserveDrawingBuffer: true
-            }
-          },
-          onProgress: unityProgress
-        });
-unityInstance = gameInstance;
+
+var unityInstance = gameInstance;
 
         function unityProgress (gameInstance, progress) {
           if (!gameInstance.progress) {
