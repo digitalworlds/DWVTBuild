@@ -46,7 +46,7 @@
             unityInstance.loading = document.getElementById('loading');
             document.dispatchEvent(new CustomEvent('UnityProgressStart'));
           }
-          unityInstance.progress.style.width = (100 * progress) + '%';
+         unityInstance.progress.style.width = (100 * progress) + '%';
           if (progress === 1) {
             document.dispatchEvent(new CustomEvent('UnityLoaded'));
           }
@@ -117,12 +117,6 @@
           firebase.initializeApp(firebaseConfig);
           firebase.analytics();
       </script>
-
-
-
-
-
-
 
   </body>
 
