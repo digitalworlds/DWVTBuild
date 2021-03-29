@@ -28,7 +28,7 @@
     <script src="Build/56b27af957420c10aef972428bfcf1ed.js"></script>
     <script>
         UnityLoader.SystemInfo.mobile = false;  // Workaround to force `UnityLoader` to actually load on mobile.
-        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/2551c53117380d4bcbb02c24f094307d.json', {
+        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/6088c2f9533b78fdea74c0e37a8268ed.json', {
           Module: {
             // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
             webglContextAttributes: {
@@ -37,19 +37,18 @@
           },
           onProgress: unityProgress
         });
-         var unityInstance = window.gameInstance;
 
-        function unityProgress(unityInstance, progress) {
-            if (!unityInstance.progress) {
-                unityInstance.loader = document.getElementById('loader');
-                unityInstance.progress = document.getElementById('progress');
-                unityInstance.loading = document.getElementById('loading');
-                document.dispatchEvent(new CustomEvent('UnityProgressStart'));
-            }
-            unityInstance.progress.style.width = (100 * progress) + '%';
-            if (progress === 1) {
-                document.dispatchEvent(new CustomEvent('UnityLoaded'));
-            }
+        function unityProgress (gameInstance, progress) {
+          if (!gameInstance.progress) {
+            gameInstance.loader = document.getElementById('loader');
+            gameInstance.progress = document.getElementById('progress');
+            gameInstance.loading = document.getElementById('loading');
+            document.dispatchEvent(new CustomEvent('UnityProgressStart'));
+          }
+          gameInstance.progress.style.width = (100 * progress) + '%';
+          if (progress === 1) {
+            document.dispatchEvent(new CustomEvent('UnityLoaded'));
+          }
         }
     </script>
   </head>
