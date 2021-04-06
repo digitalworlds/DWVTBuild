@@ -1,6 +1,6 @@
 {
 "companyName": "DefaultCompany",
-"productName": "ShaderDemo",
+"productName": "shader",
 "productVersion": "0.1",
 "dataUrl": "DWVTBuild.data.unityweb",
 "wasmCodeUrl": "DWVTBuild.wasm.code.unityweb",
