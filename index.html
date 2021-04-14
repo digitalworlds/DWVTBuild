@@ -28,7 +28,7 @@
     <script src="Build/56b27af957420c10aef972428bfcf1ed.js"></script>
     <script>
         UnityLoader.SystemInfo.mobile = false;  // Workaround to force `UnityLoader` to actually load on mobile.
-        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/7c28e71ae2f423b2ec7ed1fef29b505d.json', {
+        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/31aced38da8149111767b24b894fe22b.json', {
           Module: {
             // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
             webglContextAttributes: {
@@ -38,19 +38,17 @@
           onProgress: unityProgress
         });
 
-        var unityInstance = window.gameInstance;
-
-        function unityProgress(unityInstance, progress) {
-            if (!unityInstance.progress) {
-                unityInstance.loader = document.getElementById('loader');
-                unityInstance.progress = document.getElementById('progress');
-                unityInstance.loading = document.getElementById('loading');
-                document.dispatchEvent(new CustomEvent('UnityProgressStart'));
-            }
-            unityInstance.progress.style.width = (100 * progress) + '%';
-            if (progress === 1) {
-                document.dispatchEvent(new CustomEvent('UnityLoaded'));
-            }
+        function unityProgress (gameInstance, progress) {
+          if (!gameInstance.progress) {
+            gameInstance.loader = document.getElementById('loader');
+            gameInstance.progress = document.getElementById('progress');
+            gameInstance.loading = document.getElementById('loading');
+            document.dispatchEvent(new CustomEvent('UnityProgressStart'));
+          }
+          gameInstance.progress.style.width = (100 * progress) + '%';
+          if (progress === 1) {
+            document.dispatchEvent(new CustomEvent('UnityLoaded'));
+          }
         }
     </script>
   </head>
@@ -105,14 +103,14 @@
           // Your web app's Firebase configuration
           // For Firebase JS SDK v7.20.0 and later, measurementId is optional
           var firebaseConfig = {
-              apiKey: "AIzaSyAnNn4YloX5sGdtf33Z_3KaktP1SDDtizM",
-              authDomain: "dwvt-8656e.firebaseapp.com",
-              databaseURL: "https://dwvt-8656e-default-rtdb.firebaseio.com",
-              projectId: "dwvt-8656e",
-              storageBucket: "dwvt-8656e.appspot.com",
-              messagingSenderId: "376575074599",
-              appId: "1:376575074599:web:1a48f22010af82561dc902",
-              measurementId: "G-ETVEPJ6XLB"
+          apiKey: "AIzaSyAnNn4YloX5sGdtf33Z_3KaktP1SDDtizM",
+          authDomain: "dwvt-8656e.firebaseapp.com",
+          databaseURL: "https://dwvt-8656e-default-rtdb.firebaseio.com",
+          projectId: "dwvt-8656e",
+          storageBucket: "dwvt-8656e.appspot.com",
+          messagingSenderId: "376575074599",
+          appId: "1:376575074599:web:1a48f22010af82561dc902",
+          measurementId: "G-ETVEPJ6XLB"
           };
           // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
