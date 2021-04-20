@@ -41,6 +41,7 @@
          var unityInstance = window.gameInstance;
 
         function unityProgress(unityInstance, progress) {
+
             if (!unityInstance.progress) {
                 unityInstance.loader = document.getElementById('loader');
                 unityInstance.progress = document.getElementById('progress');
