@@ -12,7 +12,6 @@
   }
 
   function XRManager() {
-    this.enterXRButton = document.getElementById('enterxr');
     this.gameContainer = document.getElementById('game');
     this.perfStatus = document.getElementById('performance');
 
@@ -46,12 +45,10 @@
 
     if (!window.isSecureContext) {
       this.isVRSupported = false;
-      this.enterXRButton.dataset.enabled = false;
       return;
     }
     navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
       this.isVRSupported = supported;
-      this.enterXRButton.dataset.enabled = supported;
     });
   }
 
@@ -77,8 +74,6 @@
     // dispatched by index.html
     document.addEventListener('UnityLoaded', onUnityLoaded, false);
     document.addEventListener('Unity', onUnityMessage, false);
-
-    this.enterXRButton.addEventListener('click', onToggleVR, false);
   }
 
   XRManager.prototype.requestPresent = function () {
@@ -202,8 +197,6 @@
     var hasExternalDisplay = false;
 
     this.setGameInstance(gameInstance);
-
-    this.enterXRButton.disabled = !this.isVRSupported;
 
     this.gameInstance.SendMessage(
       this.unityObjectName, 'OnXRCapabilities',
