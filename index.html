@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
+    <script type='text/javascript'>
+        document.onmousedown = function () { window.focus(); };
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- These tags are needed for enabling experimental Chrome APIs via Chrome's Origin-Trial program (Android, Windows): https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/available-trials.md#current-experimental-features -->
@@ -10,32 +13,32 @@
     <meta http-equiv="origin-trial" data-feature="WebXR (For Chrome M62+)" data-expires="2018-05-07" content="AgINztgDnjFV8da2D9SSzIITBRlHX8mduCR7DXfENxjr9ALduKOxBDdn2n66auQSlljVyhnRWWerxC0BWbE8pAoAAABOeyJvcmlnaW4iOiJodHRwczovL2dpdGh1Yi5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MjU3MjU4MDh9">
     <title>Digital Worlds Virtual Tour | DWVT</title>
     <meta name="description" content="">
-    
+
     <link rel="icon" href="favicon.ico">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" type="text/css" href="styles/webxr.css">
 
     <script src="lib/telemetry.js"></script>
     <script>
-      MozillaResearch.telemetry.start({
-        analytics: true,
-        errorLogging: true,
-        performance: true
-      });
-      MozillaResearch.telemetry.performance.mark('LoaderParsingStart');
+        MozillaResearch.telemetry.start({
+            analytics: true,
+            errorLogging: true,
+            performance: true
+        });
+        MozillaResearch.telemetry.performance.mark('LoaderParsingStart');
     </script>
 
     <script src="Build/56b27af957420c10aef972428bfcf1ed.js"></script>
     <script>
         UnityLoader.SystemInfo.mobile = false;  // Workaround to force `UnityLoader` to actually load on mobile.
         window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/01e04b1fc0c0ac1af411682e3c64e4b7.json', {
-          Module: {
-            // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
-            webglContextAttributes: {
-              preserveDrawingBuffer: true
-            }
-          },
-          onProgress: unityProgress
+            Module: {
+                // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
+                webglContextAttributes: {
+                    preserveDrawingBuffer: true
+                }
+            },
+            onProgress: unityProgress
         });
 
         var unityInstance = window.gameInstance;
@@ -53,7 +56,7 @@
             }
         }
     </script>
-  </head>
+</head>
   <body>
       <div id="loader">
           <div id="loading" class="loading">Loading</div>
