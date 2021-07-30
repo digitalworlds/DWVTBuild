@@ -28,7 +28,7 @@
     <script src="Build/56b27af957420c10aef972428bfcf1ed.js"></script>
     <script>
         UnityLoader.SystemInfo.mobile = false;  // Workaround to force `UnityLoader` to actually load on mobile.
-        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/4583e18e36145339c63f87c8e0ccf0a5.json', {
+        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/ad441c44a319180c0a6805cc9002ce66.json', {
           Module: {
             // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
             webglContextAttributes: {
@@ -52,7 +52,6 @@
                 document.dispatchEvent(new CustomEvent('UnityLoaded'));
             }
         }
-
     </script>
   </head>
   <body>
@@ -93,9 +92,6 @@
       <script src="vendor/gl-matrix-min.js"></script>
       <script src="webxr.js"></script>
 
-
-
-
       <!-- The core Firebase JS SDK is always required and must be listed first -->
       <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
@@ -123,10 +119,6 @@
           firebase.initializeApp(firebaseConfig);
           firebase.analytics();
       </script>
-
-
-
-
 
   </body>
 
