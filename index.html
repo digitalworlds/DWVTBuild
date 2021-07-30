@@ -28,7 +28,7 @@
     <script src="Build/56b27af957420c10aef972428bfcf1ed.js"></script>
     <script>
         UnityLoader.SystemInfo.mobile = false;  // Workaround to force `UnityLoader` to actually load on mobile.
-        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/9dcbcd78b760f1ce76d255e8d9a7cbe9.json', {
+        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/9d9d4b25e476ef0aa74a3cc4a7aa0f11.json', {
           Module: {
             // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
             webglContextAttributes: {
@@ -38,19 +38,17 @@
           onProgress: unityProgress
         });
 
-        var unityInstance = window.gameInstance;
-
-        function unityProgress(unityInstance, progress) {
-            if (!unityInstance.progress) {
-                unityInstance.loader = document.getElementById('loader');
-                unityInstance.progress = document.getElementById('progress');
-                unityInstance.loading = document.getElementById('loading');
-                document.dispatchEvent(new CustomEvent('UnityProgressStart'));
-            }
-            unityInstance.progress.style.width = (100 * progress) + '%';
-            if (progress === 1) {
-                document.dispatchEvent(new CustomEvent('UnityLoaded'));
-            }
+        function unityProgress (gameInstance, progress) {
+          if (!gameInstance.progress) {
+            gameInstance.loader = document.getElementById('loader');
+            gameInstance.progress = document.getElementById('progress');
+            gameInstance.loading = document.getElementById('loading');
+            document.dispatchEvent(new CustomEvent('UnityProgressStart'));
+          }
+          gameInstance.progress.style.width = (100 * progress) + '%';
+          if (progress === 1) {
+            document.dispatchEvent(new CustomEvent('UnityLoaded'));
+          }
         }
     </script>
   </head>
@@ -93,8 +91,6 @@
       <script src="webxr.js"></script>
 
 
-
-
       <!-- The core Firebase JS SDK is always required and must be listed first -->
       <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
@@ -122,7 +118,6 @@
           firebase.initializeApp(firebaseConfig);
           firebase.analytics();
       </script>
-
 
 
 
