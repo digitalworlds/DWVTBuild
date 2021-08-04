@@ -28,7 +28,7 @@
     <script src="Build/56b27af957420c10aef972428bfcf1ed.js"></script>
     <script>
         UnityLoader.SystemInfo.mobile = false;  // Workaround to force `UnityLoader` to actually load on mobile.
-        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/583e6554b9f836d70ef85daea14b57f1.json', {
+        window.gameInstance = UnityLoader.instantiate('gameContainer', 'Build/42818aeff95feff68e5efdae351b902b.json', {
           Module: {
             // `preserveDrawingBuffer` is needed for WebVR content to be mirrored to the `<canvas>`.
             webglContextAttributes: {
@@ -37,7 +37,6 @@
           },
           onProgress: unityProgress
         });
-
         var unityInstance = window.gameInstance;
 
         function unityProgress(unityInstance, progress) {
