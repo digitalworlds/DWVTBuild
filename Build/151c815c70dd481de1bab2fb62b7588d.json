@@ -1,0 +1,16 @@
+{
+"companyName": "DigitalWorldsInstitute",
+"productName": "DWVT",
+"productVersion": "0.7",
+"dataUrl": "0e46f13f2bbf770e78cd1013cfff0b06.unityweb",
+"wasmCodeUrl": "40d81d75a264d1aa74a808b8d52894bd.unityweb",
+"wasmFrameworkUrl": "db9d685ec48eb98d9df3298956dc5d76.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.9f1"
+}
